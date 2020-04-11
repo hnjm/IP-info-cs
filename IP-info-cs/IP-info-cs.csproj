@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B4F626A1-8BEA-43F2-849C-DF32C4EEBCB8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>IP_info_cs</RootNamespace>
+    <AssemblyName>IP-info-cs</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="iTool-cs\iTool\Array.cs" />
+    <Compile Include="iTool-cs\iTool\Math\Geometry.cs" />
+    <Compile Include="iTool-cs\iTool\Network\Cookie.cs" />
+    <Compile Include="iTool-cs\iTool\Network\Http.cs" />
+    <Compile Include="iTool-cs\iTool\Network\Ping.cs" />
+    <Compile Include="iTool-cs\iTool\Network\Url.cs" />
+    <Compile Include="iTool-cs\iTool\Number.cs" />
+    <Compile Include="iTool-cs\iTool\String.cs" />
+    <Compile Include="iTool-cs\iTool\Winform\Checkbox.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="iTool-cs\.git\config" />
+    <None Include="iTool-cs\.git\description" />
+    <None Include="iTool-cs\.git\HEAD" />
+    <None Include="iTool-cs\.git\hooks\applypatch-msg.sample" />
+    <None Include="iTool-cs\.git\hooks\commit-msg.sample" />
+    <None Include="iTool-cs\.git\hooks\fsmonitor-watchman.sample" />
+    <None Include="iTool-cs\.git\hooks\post-update.sample" />
+    <None Include="iTool-cs\.git\hooks\pre-applypatch.sample" />
+    <None Include="iTool-cs\.git\hooks\pre-commit.sample" />
+    <None Include="iTool-cs\.git\hooks\pre-merge-commit.sample" />
+    <None Include="iTool-cs\.git\hooks\pre-push.sample" />
+    <None Include="iTool-cs\.git\hooks\pre-rebase.sample" />
+    <None Include="iTool-cs\.git\hooks\pre-receive.sample" />
+    <None Include="iTool-cs\.git\hooks\prepare-commit-msg.sample" />
+    <None Include="iTool-cs\.git\hooks\update.sample" />
+    <None Include="iTool-cs\.git\index" />
+    <None Include="iTool-cs\.git\info\exclude" />
+    <None Include="iTool-cs\.git\logs\HEAD" />
+    <None Include="iTool-cs\.git\logs\refs\heads\master" />
+    <None Include="iTool-cs\.git\logs\refs\remotes\origin\HEAD" />
+    <None Include="iTool-cs\.git\objects\06\b42e3529f4f6259615e549841e51a72f10a86e" />
+    <None Include="iTool-cs\.git\objects\1a\fdd3fc48d5bf065ca42abb5d8dad06cb8ab53d" />
+    <None Include="iTool-cs\.git\objects\25\652a17e2989341c0fe5b193bb0a5e00a1cd6a9" />
+    <None Include="iTool-cs\.git\objects\27\7b72663aebed0d6a53568095c49e6be1b0a624" />
+    <None Include="iTool-cs\.git\objects\35\b04f98f1c291916b7456114db336532cf4e5f3" />
+    <None Include="iTool-cs\.git\objects\45\8cf47abbcd1c2b3a7691175c3a2fc9655f5cc1" />
+    <None Include="iTool-cs\.git\objects\5a\e7d7ac91be6ab009043b318dfc3f7563e471ee" />
+    <None Include="iTool-cs\.git\objects\64\3292847d66566e6836c9a5bc7cee33e5196bfb" />
+    <None Include="iTool-cs\.git\objects\74\6cd9570337a3dbef885b841b84d143c590cf0d" />
+    <None Include="iTool-cs\.git\objects\88\b6d0fe392cabf6c893079a138af2f44fa2df53" />
+    <None Include="iTool-cs\.git\objects\96\f1102a409fdefdcf26434d82527c4b1603c5ac" />
+    <None Include="iTool-cs\.git\objects\9d\6dc6f2cdb17ad9aeee976215d6e5ec92412202" />
+    <None Include="iTool-cs\.git\objects\af\2cdd9d9ed5940b1b8f48668475cfea22290aaa" />
+    <None Include="iTool-cs\.git\objects\b0\d0a6fe910fb9a1b7f5481a204da6ba460d8831" />
+    <None Include="iTool-cs\.git\objects\b7\44701de6100fc52ed30d07b128812caa3ddfa5" />
+    <None Include="iTool-cs\.git\objects\b9\361032f17d4dfab3cfe2339877771080d49761" />
+    <None Include="iTool-cs\.git\objects\bb\7a008f15fdedfa8495152ea261606300ffe881" />
+    <None Include="iTool-cs\.git\objects\d1\8ef38668ee92f6f1d6bbc4e83b7290a48a3432" />
+    <None Include="iTool-cs\.git\objects\d6\d6f1c0a7fe45d0a78fab22800a80bc00d3b5c2" />
+    <None Include="iTool-cs\.git\objects\ef\d785c94dc8899196b45d77340bfa91b39fa2f4" />
+    <None Include="iTool-cs\.git\objects\f2\88702d2fa16d3cdf0035b15a9fcbc552cd88e7" />
+    <None Include="iTool-cs\.git\objects\f8\7c39df81648b8cc182049ec0e76cb83610636e" />
+    <None Include="iTool-cs\.git\objects\f9\cd5235775bde8cbc623976477bb3839c5c4305" />
+    <None Include="iTool-cs\.git\objects\fa\47e432b8d1adde16f3499a5d708e2723eb2875" />
+    <None Include="iTool-cs\.git\objects\fb\4ea5a0e6d439e97a51973e2b6f93b9a1cd31f6" />
+    <None Include="iTool-cs\.git\packed-refs" />
+    <None Include="iTool-cs\.git\refs\heads\master" />
+    <None Include="iTool-cs\.git\refs\remotes\origin\HEAD" />
+    <None Include="iTool-cs\LICENSE" />
+    <None Include="iTool-cs\README.md" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="iTool-cs\.git\objects\info\" />
+    <Folder Include="iTool-cs\.git\objects\pack\" />
+    <Folder Include="iTool-cs\.git\refs\tags\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
