@@ -7,6 +7,7 @@ namespace IP_info_cs.Forms
     public partial class Home : Form
     {
         protected CheckBox[] chckbox_list;
+        private enum WhichAPICheckBox { Astro, Geo, Timezone }
         public Home()
         {
             InitializeComponent();
@@ -20,16 +21,25 @@ namespace IP_info_cs.Forms
         }
 
         #region Static
-
+        private static void BuildAstro() { }
+        private static void BuildGeo() { }
+        private static void BuildTimezone() { }
         #endregion
         #region Helper
-        private CheckBox GetSelectedCheckbox()
+        private WhichAPICheckBox GetSelectedCheckbox()
         {
-            CheckBox theone = null;
+            var whichone = WhichAPICheckBox.Astro;
             foreach (var chckbox in chckbox_list)
                 if (chckbox.Checked)
-                    theone = chckbox;
-            return theone;
+                {
+                    if (chckbox == chckboxAstro)
+                        whichone = WhichAPICheckBox.Astro;
+                    if (chckbox == chckboxGeo)
+                        whichone = WhichAPICheckBox.Geo;
+                    if (chckbox == chckboxTimezone)
+                        whichone = WhichAPICheckBox.Timezone;
+                }
+            return whichone;
         }
         #endregion
 
@@ -48,7 +58,18 @@ namespace IP_info_cs.Forms
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Selected: " + GetSelectedCheckbox().Name);
+            switch (GetSelectedCheckbox())
+            {
+                case WhichAPICheckBox.Astro:
+                    BuildAstro();
+                    break;
+                case WhichAPICheckBox.Geo:
+                    BuildGeo();
+                    break;
+                case WhichAPICheckBox.Timezone:
+                    BuildTimezone();
+                    break;
+            }
         }
     }
 }

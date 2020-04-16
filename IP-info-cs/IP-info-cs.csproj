@@ -47,6 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="API\Assistance\Data.cs" />
+    <Compile Include="API\Assistance\IAPI.cs" />
+    <Compile Include="API\Astronomy.cs" />
+    <Compile Include="API\Geolocation.cs" />
+    <Compile Include="API\Time_zone.cs" />
     <Compile Include="Forms\Home.cs">
       <SubType>Form</SubType>
     </Compile>
