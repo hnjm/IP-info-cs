@@ -44,7 +44,8 @@ namespace IP_info.Forms
         }
         private void BuildAPI()
         {
-            switch (GetSelectedCheckbox())
+            GetSelectedCheckbox();
+            switch (this.whichAPI)
             {
                 case WhichAPICheckBox.Astro:
                     BuildAstro();
