@@ -7,7 +7,6 @@ namespace IP_info_cs.Forms
     public partial class Home : Form
     {
         protected CheckBox[] chckbox_list;
-
         public Home()
         {
             InitializeComponent();
@@ -17,26 +16,39 @@ namespace IP_info_cs.Forms
                 this.chckboxAstro,
                 this.chckboxTimezone,
             };
+            this.chckboxAstro.Checked = true;
         }
 
-        private void chckboxTimezone_Click(object sender, EventArgs e)
+        #region Static
+
+        #endregion
+        #region Helper
+        private CheckBox GetSelectedCheckbox()
         {
-            iTool.Winform.iCheckbox.Uniquify(ref this.chckbox_list, ref this.chckboxTimezone);
+            CheckBox theone = null;
+            foreach (var chckbox in chckbox_list)
+                if (chckbox.Checked)
+                    theone = chckbox;
+            return theone;
         }
+        #endregion
 
         private void chckboxGeo_Click(object sender, EventArgs e)
         {
             iTool.Winform.iCheckbox.Uniquify(ref this.chckbox_list, ref this.chckboxGeo);
         }
-
         private void chckboxAstro_Click(object sender, EventArgs e)
         {
             iTool.Winform.iCheckbox.Uniquify(ref this.chckbox_list, ref this.chckboxAstro);
         }
+        private void chckboxTimezone_Click(object sender, EventArgs e)
+        {
+            iTool.Winform.iCheckbox.Uniquify(ref this.chckbox_list, ref this.chckboxTimezone);
+        }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Selected: " + GetSelectedCheckbox().Name);
         }
     }
 }
