@@ -1,11 +1,15 @@
-﻿using System;
+﻿using IP_Info.API;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace IP_info_cs.Forms
+namespace IP_info.Forms
 {
     public partial class Home : Form
     {
+        private Astronomy astro;
+        private Geolocation geo;
+        private Time_zone timezone;
         protected CheckBox[] chckbox_list;
         private enum WhichAPICheckBox { Astro, Geo, Timezone }
         public Home()
@@ -21,9 +25,7 @@ namespace IP_info_cs.Forms
         }
 
         #region Static
-        private static void BuildAstro() { }
-        private static void BuildGeo() { }
-        private static void BuildTimezone() { }
+
         #endregion
         #region Helper
         private WhichAPICheckBox GetSelectedCheckbox()
@@ -41,6 +43,24 @@ namespace IP_info_cs.Forms
                 }
             return whichone;
         }
+        private void BuildAPI()
+        {
+            switch (GetSelectedCheckbox())
+            {
+                case WhichAPICheckBox.Astro:
+                    BuildAstro();
+                    break;
+                case WhichAPICheckBox.Geo:
+                    BuildGeo();
+                    break;
+                case WhichAPICheckBox.Timezone:
+                    BuildTimezone();
+                    break;
+            }
+        }
+        private void BuildAstro() => this.astro = new Astronomy();
+        private void BuildGeo() => this.geo = new Geolocation();
+        private void BuildTimezone() => this.timezone = new Time_zone();
         #endregion
 
         private void chckboxGeo_Click(object sender, EventArgs e)
@@ -58,18 +78,7 @@ namespace IP_info_cs.Forms
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            switch (GetSelectedCheckbox())
-            {
-                case WhichAPICheckBox.Astro:
-                    BuildAstro();
-                    break;
-                case WhichAPICheckBox.Geo:
-                    BuildGeo();
-                    break;
-                case WhichAPICheckBox.Timezone:
-                    BuildTimezone();
-                    break;
-            }
+            BuildAPI();
         }
     }
 }

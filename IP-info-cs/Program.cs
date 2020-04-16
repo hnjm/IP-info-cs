@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace IP_info_cs
+namespace IP_info
 {
     static class Program
     {

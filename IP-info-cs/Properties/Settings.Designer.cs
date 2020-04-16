@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IP_info_cs.Properties
+namespace IP_info.Properties
 {
 
 

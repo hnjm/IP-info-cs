@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace IP_Info.API
 {
-    public class IAPI
+    internal public class IAPI
     {
         protected bool Continue = true;
         protected string url;

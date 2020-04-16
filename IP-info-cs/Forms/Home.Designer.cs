@@ -1,4 +1,4 @@
-﻿namespace IP_info_cs.Forms
+﻿namespace IP_info.Forms
 {
     partial class Home
     {
