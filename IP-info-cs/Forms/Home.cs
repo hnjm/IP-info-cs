@@ -11,6 +11,7 @@ namespace IP_info.Forms
         private Geolocation geo;
         private Time_zone timezone;
         protected CheckBox[] chckbox_list;
+        private WhichAPICheckBox whichAPI;
         private enum WhichAPICheckBox { Astro, Geo, Timezone }
         public Home()
         {
@@ -28,20 +29,18 @@ namespace IP_info.Forms
 
         #endregion
         #region Helper
-        private WhichAPICheckBox GetSelectedCheckbox()
+        private void GetSelectedCheckbox()
         {
-            var whichone = WhichAPICheckBox.Astro;
             foreach (var chckbox in chckbox_list)
                 if (chckbox.Checked)
                 {
                     if (chckbox == chckboxAstro)
-                        whichone = WhichAPICheckBox.Astro;
+                        whichAPI = WhichAPICheckBox.Astro;
                     if (chckbox == chckboxGeo)
-                        whichone = WhichAPICheckBox.Geo;
+                        whichAPI = WhichAPICheckBox.Geo;
                     if (chckbox == chckboxTimezone)
-                        whichone = WhichAPICheckBox.Timezone;
+                        whichAPI = WhichAPICheckBox.Timezone;
                 }
-            return whichone;
         }
         private void BuildAPI()
         {
@@ -79,6 +78,7 @@ namespace IP_info.Forms
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             BuildAPI();
+
         }
     }
 }
