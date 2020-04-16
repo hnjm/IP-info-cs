@@ -28,6 +28,11 @@ namespace IP_info.Forms
         #region Static
 
         #endregion
+        #region Show info
+        private void ShowGeo() { }
+        private void ShowAstro() { }
+        private void ShowTimezone() { }
+        #endregion
         #region Helper
         private void GetSelectedCheckbox()
         {
@@ -49,12 +54,15 @@ namespace IP_info.Forms
             {
                 case WhichAPICheckBox.Astro:
                     BuildAstro();
+                    ShowAstro();
                     break;
                 case WhichAPICheckBox.Geo:
                     BuildGeo();
+                    ShowGeo();
                     break;
                 case WhichAPICheckBox.Timezone:
                     BuildTimezone();
+                    ShowTimezone();
                     break;
             }
         }
@@ -78,8 +86,8 @@ namespace IP_info.Forms
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            this.btnSubmit.Enabled = false;
             BuildAPI();
-
         }
     }
 }
