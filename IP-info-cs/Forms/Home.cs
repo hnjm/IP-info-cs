@@ -19,17 +19,6 @@ namespace IP_info_cs.Forms
             };
         }
 
-        private void btnSubmit_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnSubmit.ForeColor = Color.DimGray;
-            this.btnSubmit.BackColor = Color.LightGray;
-        }
-        private void btnSubmit_MouseEnter(object sender, EventArgs e)
-        {
-            this.btnSubmit.ForeColor = Color.GhostWhite;
-            this.btnSubmit.BackColor = Color.DimGray;
-        }
-
         private void chckboxTimezone_Click(object sender, EventArgs e)
         {
             iTool.Winform.iCheckbox.Uniquify(ref this.chckbox_list, ref this.chckboxTimezone);
@@ -43,6 +32,11 @@ namespace IP_info_cs.Forms
         private void chckboxAstro_Click(object sender, EventArgs e)
         {
             iTool.Winform.iCheckbox.Uniquify(ref this.chckbox_list, ref this.chckboxAstro);
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
