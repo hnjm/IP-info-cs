@@ -1,6 +1,9 @@
 ﻿using IP_Info.API;
 using System;
 using System.Drawing;
+using System.Globalization;
+using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace IP_info.Forms
@@ -30,7 +33,20 @@ namespace IP_info.Forms
         #endregion
         #region Show info
         private void ShowGeo() { }
-        private void ShowAstro() { }
+        private void ShowAstro()
+        {
+            var txt = new StringBuilder();
+
+            txt.AppendLine("\t < Basic info >");
+            foreach (var res in this.astro.res_default)
+                txt.AppendFormat("{0}: {1}", res.Key, res.Value);
+
+            txt.AppendLine("\t < Location info >");
+            foreach (var res in this.astro.res_location)
+                txt.AppendFormat("{0}: {1}", res.Key, res.Value);
+
+            this.rtxtboxDisplayInfo.Text = txt.ToString();
+        }
         private void ShowTimezone() { }
         #endregion
         #region Helper
