@@ -35,7 +35,7 @@ namespace IP_info.Forms
         // If doesn't work, get arg with ref
         private void BuildContent(string header, StringBuilder txt, JObject results)
         {
-            txt.AppendLine($"\t < {iTool.iString.ToUpper(header, 0)} info >");
+            txt.AppendLine($"\t < {iTool.iString.ToUpperEachFirstWord(header)} info >");
             foreach (var res in results)
                 txt.AppendFormat("{0}: {1}", res.Key, res.Value);
         }
