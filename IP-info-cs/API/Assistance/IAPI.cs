@@ -16,6 +16,14 @@ namespace IP_Info.API
         protected JObject Res => this.Continue ? this.res as JObject : null;
         protected void ResDefault()
         {
+            if (this.Res == null)
+            {
+                System.Windows.Forms.MessageBox.Show(
+                    "Error! No response.", "Error", System.Windows.Forms.MessageBoxButtons.OK,
+                    System.Windows.Forms.MessageBoxIcon.Error
+                    );
+                Environment.Exit(0);
+            }
             this.res_default = this.Res.DeepClone() as JObject;
             var jTokens = new List<string>();
             foreach (var item in this.res_default)

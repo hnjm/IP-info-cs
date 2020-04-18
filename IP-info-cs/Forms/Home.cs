@@ -29,7 +29,6 @@ namespace IP_info.Forms
         }
 
         #region Static
-
         #endregion
         #region Show info
         private void ShowGeo() { }

@@ -143,7 +143,7 @@
             this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
+            this.MaximizeBox = false;
         }
 
         #endregion
