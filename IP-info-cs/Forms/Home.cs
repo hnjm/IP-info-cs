@@ -1,4 +1,5 @@
 ﻿using IP_Info.API;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Drawing;
 using System.Globalization;
@@ -31,22 +32,27 @@ namespace IP_info.Forms
         #region Static
         #endregion
         #region Show info
+        // If doesn't work, get arg with ref
+        private void BuildContent(string header, StringBuilder txt, JObject results)
+        {
+            txt.AppendLine($"\t < {iTool.iString.ToUpper(header, 0)} info >");
+            foreach (var res in results)
+                txt.AppendFormat("{0}: {1}", res.Key, res.Value);
+        }
         private void ShowGeo() { }
         private void ShowAstro()
         {
             var txt = new StringBuilder();
-
-            txt.AppendLine("\t < Basic info >");
-            foreach (var res in this.astro.res_default)
-                txt.AppendFormat("{0}: {1}", res.Key, res.Value);
-
-            txt.AppendLine("\t < Location info >");
-            foreach (var res in this.astro.res_location)
-                txt.AppendFormat("{0}: {1}", res.Key, res.Value);
-
+            BuildContent("basic", txt, this.astro.res_default);
+            BuildContent("location", txt, this.astro.res_location);
             this.rtxtboxDisplayInfo.Text = txt.ToString();
         }
-        private void ShowTimezone() { }
+        private void ShowTimezone()
+        {
+            var txt = new StringBuilder();
+            BuildContent("basic", txt, this.timezone.res_default);
+            BuildContent("geographical", txt, this.timezone.res_geo);
+        }
         #endregion
         #region Helper
         private void GetSelectedCheckbox()
