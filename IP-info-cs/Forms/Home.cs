@@ -52,6 +52,7 @@ namespace IP_info.Forms
             var txt = new StringBuilder();
             BuildContent("basic", txt, this.timezone.res_default);
             BuildContent("geographical", txt, this.timezone.res_geo);
+            this.rtxtboxDisplayInfo.Text = txt.ToString();
         }
         #endregion
         #region Helper
