@@ -39,7 +39,14 @@ namespace IP_info.Forms
             foreach (var res in results)
                 txt.AppendFormat("{0}: {1}", res.Key, res.Value);
         }
-        private void ShowGeo() { }
+        private void ShowGeo() {
+            var txt = new StringBuilder();
+            BuildContent("basic", txt, this.geo.res_default);
+            BuildContent("currency", txt, this.geo.res_currency);
+            BuildContent("security", txt, this.geo.res_security);
+            BuildContent("time zone", txt, this.geo.res_time_zone);
+            this.rtxtboxDisplayInfo.Text = txt.ToString();
+        }
         private void ShowAstro()
         {
             var txt = new StringBuilder();
